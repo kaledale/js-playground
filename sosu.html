@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n = prompt("숫자를 입력하세요.");
+        var n1 = Number(n);
+        var sosu1 = 1;
+        for(i = 2; i<n1; i++){
+            if(n1%i == 0){
+                sosu1 = 0;
+                break;
+            }
+        }
+        if(sosu1 == 0){
+            console.log("입력한 숫자는 소수가 아닙니다.");
+        }
+        else if(sosu1 == 1){
+            console.log("입력한 숫자는 소수입니다.");
+        }
+    </script>
+</body>
+</html>
