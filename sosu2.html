@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var numbers = {
+            "all" : [],
+            "prime" : [],
+            "addAll" : function(max_num){
+                for(var i = 2; i<=max_num; i++){
+                    this.all.push(i);
+                }
+            },
+            "calPrime" : function(){
+                var i;
+                while(this.all.length != 0){
+                    i = this.all.shift();
+                    if(this.isPrime(i) == 1){
+                         this.addPrime(i);
+                    }
+                }
+
+            },
+            "isPrime" : function(number){
+                for(var i = 2; i<number; i++){
+                    if(number == 2){
+                        return 1;
+                    }
+                    else if(number % i == 0){
+                        return 0;
+                    }
+                }
+                return 1;
+            },
+            "addPrime" : function(number){
+                this.prime.push(number);
+            },
+            "getAllPrimes" : function(){
+                for(var i = 0; i<this.prime.length; i++){
+                    console.log(this.prime[i] + "은 소수입니다.");
+                }
+            }
+        }
+        
+        numbers.addAll(10000);
+        numbers.calPrime();
+        numbers.getAllPrimes();
+    </script>
+</body>
+</html>
